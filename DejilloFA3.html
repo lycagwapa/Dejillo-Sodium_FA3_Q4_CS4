@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<header>
+ <title>Multiplication Table - FA1</title>
+</header>
+<body>
+<script>
+function generateMultiplicationTable() {
+    let n = prompt("Enter the number of rows (between 2 and 10):");
+    let m = prompt("Enter the number of columns (between 2 and 10):");
+
+    // Validate user input
+    if (n < 2 || n > 10 || m < 2 || m > 10) {
+        alert("Please enter values between 2 and 10 only.");
+        return;
+    }
+
+    let table = "<table border='1'>";
+    for (let i = 1; i <= n; i++) {
+        table += "<tr>";
+        for (let j = 1; j <= m; j++) {
+            table += "<td>" + (i * j) + "</td>";
+        }
+        table += "</tr>";
+    }
+    table += "</table>";
+
+    document.getElementById("multiplicationTable").innerHTML = table;
+}
+
+generateMultiplicationTable();
+ </script>
+</body>
+</html>
